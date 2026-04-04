@@ -8,7 +8,7 @@ sudo apt install git stow
 ## Install
 Cloning repository:
 ```bash
-cd ~; git clone asdf.com
+cd ~; git clone https://github.com/MisiakCezary/dotfiles
 ```
 
 Apply configuration from cloned repository using symlinks:
