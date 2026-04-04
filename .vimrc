@@ -25,14 +25,8 @@ set expandtab
 " Ignore searching file extentions
 set wildignore=*.exe,*.dll,*.pdb,*.log,*.pak,*.zip,*.rar,*.7z
 
-" Column for warnings/errors etc... " set scl
-set signcolumn=yes
-
 "" Colors!
 syntax on
-colorscheme vim
-highlight Normal guibg=None
-highlight SignColumn guibg=None
 highlight LineNr guifg=#FFFFFF
 highlight LineNrAbove guifg=#6A6A6A
 highlight LineNrBelow guifg=#6A6A6A
@@ -81,9 +75,6 @@ map <C-j> :cn<CR>
 
 " Silently set directory to root git directory if found
 silent cd `git rev-parse --show-toplevel`
-
-" Fuzzy autocomplete
-set completeopt+=fuzzy
 
 " Statusbar with git
 function! GitBranch()

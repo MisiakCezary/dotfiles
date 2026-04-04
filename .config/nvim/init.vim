@@ -3,6 +3,11 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
+colorscheme vim
+highlight Normal guibg=None
+highlight SignColumn guibg=None
+set signcolumn=yes
+
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
