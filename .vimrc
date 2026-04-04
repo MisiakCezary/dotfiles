@@ -99,8 +99,8 @@ set statusline+=%#CursorColumn#
 set statusline+=\ %f
 set statusline+=%m
 set statusline+=%=%=%=%=%=%=%=%=
-set statusline+=\ col:%c
 set statusline+=\ ln:%l\/%L
+set statusline+=\ col:%c
 set statusline+=%=
 set statusline+=\ %y
 set statusline+=\ %#StatusLine#
