@@ -11,6 +11,11 @@ Cloning repository:
 cd ~; git clone https://github.com/MisiakCezary/dotfiles
 ```
 
+Initialize submodules:
+```bash
+git submodule init; git submodule update
+```
+
 Apply configuration from cloned repository using symlinks:
 ```bash
 stow -t ~ ~/dotfiles
