@@ -42,15 +42,15 @@ set list
 set listchars=tab:\ »\ ,trail:·,nbsp:␣
 set listchars+=precedes:<,extends:>
 
-" (F)ind
+" VSCode default Ctrl+f
 nnoremap <C-f> :grep -iIR '' **<C-Left><Left><Left>
 vnoremap <C-f> "9y:grep -iIR '<C-r>9' **<C-Left><Left><Left>
 
-" (B)rowse for file
-nnoremap <C-b> :e **/
-vnoremap <C-b> "9y:e **/<C-r>9
+" VSCode default Ctrl+p
+nnoremap <C-p> :e **/
+vnoremap <C-p> "9y:e **/<C-r>9
 
-" Classic Ctrl+h find and replace
+" VSCode default Ctrl+h
 nnoremap <C-h> :%s//gic<Left><Left><Left><Left>
 vnoremap <C-h> "9y:%s/<C-r>9//gic<Left><Left><Left><Left>
 
