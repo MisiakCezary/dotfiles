@@ -3,7 +3,11 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
+" Diagnostic column
 set signcolumn=yes
+
+" How often swap file is written / After how long diagnostic window will appear
+set updatetime=1200
 
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
