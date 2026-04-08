@@ -26,21 +26,7 @@ set expandtab
 set wildignore=*.exe,*.dll,*.pdb,*.log,*.pak,*.zip,*.rar,*.7z
 
 "" Colors!
-syntax on
-highlight LineNr guifg=#FFFFFF
-highlight LineNrAbove guifg=#6A6A6A
-highlight LineNrBelow guifg=#6A6A6A
-highlight Pmenu guibg=#222222
-highlight Pmenu guifg=#CCCCCC
-highlight PmenuSel guifg=#222222
-highlight Whitespace guifg=#DD5555
-highlight NonText guifg=#9999DD
-highlight StatusLine guibg=#222222
-highlight StatusLine guifg=#DDDDDD
-highlight StatusLineNC guibg=#222222
-highlight StatusLineNC guifg=#DDDDDD
-highlight CursorColumn guibg=#BBBBBB
-highlight CursorColumn guifg=#222222
+colorscheme codedark
 
 " Disable explorer banner
 let g:netrw_banner=0

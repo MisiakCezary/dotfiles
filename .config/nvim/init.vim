@@ -3,9 +3,6 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
-colorscheme vim
-highlight Normal guibg=None
-highlight SignColumn guibg=None
 set signcolumn=yes
 
 set completeopt=longest,menuone
