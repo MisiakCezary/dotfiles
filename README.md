@@ -27,5 +27,8 @@ git config --global core.editor "nvim"
 ```
 
 ## Lsp setups
-To install lsp put [LSP config](https://github.com/neovim/nvim-lspconfig/tree/master/lsp) into .config/nvim/lsp/
-then reapply stow and install lsp for that language.
+To install new language support:
+1. Put chosen [LSP config](https://github.com/neovim/nvim-lspconfig/tree/master/lsp) into .config/nvim/lsp/
+2. Add config at the end of .config/nvim/lua/init.lua
+3. Reapply stow
+4. Install language server for that language
