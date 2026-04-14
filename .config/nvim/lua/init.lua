@@ -24,16 +24,13 @@ local function autocomplete(next_or_prev_key, key_after_whitespace)
   return next_or_prev_key
 end
 
-local function next_complete() return autocomplete('<C-n>', nil) end
-local function prev_complete() return autocomplete('<C-p>', nil) end
 local function tab_next() return autocomplete('<C-n>', '<Tab>') end
 local function tab_prev() return autocomplete('<C-p>', '<Tab>') end
-
--- vim.keymap.set('i', '<C-n>', next_complete, {expr = true})
--- vim.keymap.set('i', '<C-p>', prev_complete, {expr = true})
 vim.keymap.set('i', '<Tab>', tab_next, {expr = true})
 vim.keymap.set('i', '<S-Tab>', tab_prev, {expr = true})
 
+
+-- Open diagnostic window when hovering
 vim.api.nvim_create_autocmd("CursorHold", {
   pattern = "*",
   callback = function()

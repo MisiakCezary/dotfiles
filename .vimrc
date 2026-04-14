@@ -57,31 +57,11 @@ vnoremap <C-h> "9y:%s/<C-r>9//gic<Left><Left><Left><Left>
 " Quickfix list navigation
 map <C-k> :cp<CR>
 map <C-j> :cn<CR>
-"map <F2> :copen<CR>
+
+" Git integration
+nnoremap <F2> :!git blame %<CR>
+nnoremap <F3> :!git log --abbrev-commit %<CR>
 
 " Silently set directory to root git directory if found
 silent cd `git rev-parse --show-toplevel`
 
-" Statusbar with git
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-set statusline=%{StatuslineGit()}
-set statusline+=%#CursorColumn#
-set statusline+=\ %f
-set statusline+=%m
-set statusline+=%=%=%=%=%=%=%=%=
-set statusline+=\ ln:%l\/%L
-set statusline+=\ col:%c
-set statusline+=%=
-set statusline+=\ %y
-set statusline+=\ %#StatusLine#
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ 
-"set statusline+=\ %p%%
