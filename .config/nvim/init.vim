@@ -26,6 +26,11 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 
 Plug 'airblade/vim-gitgutter'
 
+call plug#end()
+
+" Add column for gitgutter / diagnostic
+set signcolumn=auto
+
 " How often swap file is written / After how long diagnostic window will appear
 set updatetime=1200
 
