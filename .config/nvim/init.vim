@@ -29,7 +29,7 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Add column for gitgutter / diagnostic
-set signcolumn=auto
+set signcolumn=auto:9
 
 " How often swap file is written / After how long diagnostic window will appear
 set updatetime=1200
