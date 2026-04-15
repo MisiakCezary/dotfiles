@@ -23,7 +23,7 @@ set expandtab
 "set tabstop=4 softtabstop=0
 
 " Ignore searching file extentions
-set wildignore=*.exe,*.dll,*.pdb,*.log,*.pak,*.zip,*.rar,*.7z
+set wildignore=*.exe,*.dll,*.pdb,*.log,*.pak,*.zip,*.rar,*.7z,*/tmp/*,*.so,.*swp,*.pyc,*.sqlite
 
 "" Colors!
 colorscheme codedark
