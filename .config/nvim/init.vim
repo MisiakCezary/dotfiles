@@ -25,15 +25,19 @@ endif
 call plug#begin(expand('~/.config/nvim/plugged'))
 
 Plug 'airblade/vim-gitgutter'
+Plug 'rachartier/tiny-inline-diagnostic.nvim'
 
 call plug#end()
 
+let g:gitgutter_sign_priority=20
+
 " Add column for gitgutter / diagnostic
-set signcolumn=auto:9
+set signcolumn=auto:1
 
 " How often swap file is written / After how long diagnostic window will appear
 set updatetime=1200
 
+" Narrow autocomplete as you type
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
