@@ -26,6 +26,16 @@ stow -t ~ ~/dotfiles
 git config --global core.editor "nvim"
 ```
 
+## Install tree-sitter-cli from cargo
+```bash
+curl https://sh.rustup.rs -sSf | sh ; cargo install --locked tree-sitter-cli
+```
+
+## Install plugins in nvim
+```
+:PlugInstall
+```
+
 ## Lsp setups
 To install new language support:
 1. Put chosen [LSP config](https://github.com/neovim/nvim-lspconfig/tree/master/lsp) into .config/nvim/lsp/

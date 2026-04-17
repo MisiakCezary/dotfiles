@@ -43,6 +43,16 @@ vim.diagnostic.config({
   signs = false,
 })
 
+-- Auto activate treesitter
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*' },
+  callback = function(args)
+    local success, result = pcall (function()
+      vim.treesitter.start()
+    end)
+  end,
+})
+
 -- lsp's
 vim.lsp.enable({"pylsp"})
 vim.lsp.enable({"rust_analyzer"})
