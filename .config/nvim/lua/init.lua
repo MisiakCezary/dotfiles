@@ -38,9 +38,10 @@ vim.api.nvim_create_autocmd("CursorHold", {
   end,
 })
 
-vim.diagnostic.config({ virtual_text = true, signs = false })
-
-
+-- Disable diagnostic signs
+vim.diagnostic.config({
+  signs = false,
+})
 
 -- lsp's
 vim.lsp.enable({"pylsp"})

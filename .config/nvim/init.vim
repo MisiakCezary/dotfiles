@@ -3,7 +3,7 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
-" Plugins
+" Install plugin manager
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 if has('win32')&&!has('win64')
   let curl_exists=expand('C:\Windows\Sysnative\curl.exe')
@@ -22,14 +22,14 @@ if !filereadable(vimplug_exists)
 
   autocmd VimEnter * PlugInstall
 endif
+
+" Plugin list
 call plug#begin(expand('~/.config/nvim/plugged'))
-
 Plug 'airblade/vim-gitgutter'
-Plug 'rachartier/tiny-inline-diagnostic.nvim'
-
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'mfussenegger/nvim-dap'
+Plug 'igorlfs/nvim-dap-view'
 call plug#end()
-
-let g:gitgutter_sign_priority=20
 
 " Add column for gitgutter / diagnostic
 set signcolumn=auto:1
@@ -45,6 +45,5 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
-"lua require('debugging')
 " Launch init.lua USE AS LAST!
 lua require('init')
