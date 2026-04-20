@@ -58,6 +58,10 @@ vnoremap <C-h> "9y:%s/<C-r>9//gic<Left><Left><Left><Left>
 map <C-k> :cp<CR>
 map <C-j> :cn<CR>
 
+" Tab accepts autocomplete
+inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-y>" : "\<S-Tab>"
+
 " Git integration
 nnoremap <F2> :!git blame %<CR>
 nnoremap <F3> :!git log --abbrev-commit %<CR>
