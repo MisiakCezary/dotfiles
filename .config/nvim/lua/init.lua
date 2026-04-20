@@ -11,10 +11,14 @@ vim.api.nvim_create_autocmd("InsertCharPre", {
     if string.match(vim.v.char, "%a") == nil then return end
     -- No autocomplete if no lsp connected
     local lsp_completion = vim.bo.omnifunc == 'v:lua.vim.lsp.omnifunc'
-    if not lsp_completion then return end
-    -- Insert lsp completions on type
-    local keys = vim.api.nvim_replace_termcodes("<C-x><C-o>", true, false, true)
-    vim.api.nvim_feedkeys(keys, "normal", false)
+    if lsp_completion then
+      -- Insert lsp completions on type
+      local keys = vim.api.nvim_replace_termcodes("<C-x><C-o>", true, false, true)
+      vim.api.nvim_feedkeys(keys, "normal", false)
+    else
+      local key = vim.api.nvim_replace_termcodes("<C-n>", true, false, true)
+      vim.api.nvim_feedkeys(key, "normal", false)
+    end
   end,
 })
 
