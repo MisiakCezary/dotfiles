@@ -29,6 +29,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'mfussenegger/nvim-dap'
 Plug 'igorlfs/nvim-dap-view'
+Plug 'mfussenegger/nvim-dap-python'
 call plug#end()
 
 " Add column for gitgutter / diagnostic
@@ -39,11 +40,6 @@ set updatetime=1200
 
 " Narrow autocomplete as you type
 set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Launch init.lua USE AS LAST!
 lua require('init')

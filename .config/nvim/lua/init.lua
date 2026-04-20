@@ -1,34 +1,22 @@
-vim.opt.completeopt = {'menu', 'menuone', 'noselect', 'noinsert'}
+vim.opt.completeopt = {'menu', 'menuone', 'noinsert'} -- 'noselect'
 vim.opt.shortmess:append('c')
 
-local function autocomplete(next_or_prev_key, key_after_whitespace)
-  if vim.fn.pumvisible() == 1 then
-    return next_or_prev_key
-  end
-
-  -- insert key (tab) if invoked after whitespace
-  if key_after_whitespace then
-    local c = vim.fn.col('.') - 1
-    local is_whitespace = c == 0 or vim.fn.getline('.'):sub(c, c):match('%s')
-    if is_whitespace then
-      return key_after_whitespace
-    end
-  end
-
-  -- use lsp autocompletion if posible
-  local lsp_completion = vim.bo.omnifunc == 'v:lua.vim.lsp.omnifunc'
-  if lsp_completion then
-    return '<C-x><C-o>'
-  end
-
-  return next_or_prev_key
-end
-
-local function tab_next() return autocomplete('<C-n>', '<Tab>') end
-local function tab_prev() return autocomplete('<C-p>', '<Tab>') end
-vim.keymap.set('i', '<Tab>', tab_next, {expr = true})
-vim.keymap.set('i', '<S-Tab>', tab_prev, {expr = true})
-
+-- Autocomplete when typing
+vim.api.nvim_create_autocmd("InsertCharPre", {
+  pattern = "*",
+  callback = function()
+    -- No flickering
+    if vim.fn.pumvisible() == 1 then return end
+    -- No autocomplete after whitespace
+    if string.match(vim.v.char, "%a") == nil then return end
+    -- No autocomplete if no lsp connected
+    local lsp_completion = vim.bo.omnifunc == 'v:lua.vim.lsp.omnifunc'
+    if not lsp_completion then return end
+    -- Insert lsp completions on type
+    local keys = vim.api.nvim_replace_termcodes("<C-x><C-o>", true, false, true)
+    vim.api.nvim_feedkeys(keys, "normal", false)
+  end,
+})
 
 -- Open diagnostic window when hovering
 vim.api.nvim_create_autocmd("CursorHold", {
@@ -46,8 +34,8 @@ vim.diagnostic.config({
 -- Auto activate treesitter
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { '*' },
-  callback = function(args)
-    local success, result = pcall (function()
+  callback = function()
+    pcall (function()
       vim.treesitter.start()
     end)
   end,
@@ -56,3 +44,4 @@ vim.api.nvim_create_autocmd('FileType', {
 -- lsp's
 vim.lsp.enable({"pylsp"})
 vim.lsp.enable({"rust_analyzer"})
+vim.lsp.enable({"lua_ls"})
