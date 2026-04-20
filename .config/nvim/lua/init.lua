@@ -24,11 +24,11 @@ vim.api.nvim_create_autocmd( {'BufReadPost', "FileReadPre"}, {
 -- Plugin list
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
-Plug 'airblade/vim-gitgutter'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'mfussenegger/nvim-dap'
-Plug 'igorlfs/nvim-dap-view'
-Plug 'mfussenegger/nvim-dap-python'
+Plug('airblade/vim-gitgutter', { commit = '21c977e8597c468c7dc76001389b0b430d46a4b0'})
+Plug('nvim-treesitter/nvim-treesitter', { commit = '4916d6592ede8c07973490d9322f187e07dfefac'})
+Plug('mfussenegger/nvim-dap', { commit = '45a69eba683a2c448dd9ecfc4de89511f0646b5f'})
+Plug('igorlfs/nvim-dap-view', { commit = '1dd4ba2307245ca9517a4b9d99f3bf80830e4397'})
+Plug('mfussenegger/nvim-dap-python', { commit = '1808458eba2b18f178f990e01376941a42c7f93b'})
 vim.call('plug#end')
 
 -- Autocomplete when typing
