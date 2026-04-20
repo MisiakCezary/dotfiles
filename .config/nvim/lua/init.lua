@@ -1,5 +1,35 @@
 vim.opt.completeopt = {'menu', 'menuone', 'noinsert'} -- 'noselect'
 vim.opt.shortmess:append('c')
+vim.opt.signcolumn = 'auto:1'
+vim.opt.updatetime = 1200
+
+-- Disable heavy operations in huge buffers
+vim.g.huge_buffer = false
+vim.api.nvim_create_autocmd( {'BufReadPost', "FileReadPre"}, {
+  pattern = { '*' },
+  callback = function()
+    local path = vim.fn.expand('%')
+    local size = vim.fn.getfsize(path)
+    if size > 512 * 1024 then
+      vim.g.huge_buffer = true
+      vim.cmd('syntax off')
+      vim.cmd('filetype off')
+      vim.cmd('set noundofile')
+      vim.cmd('set noswapfile')
+      vim.cmd('set eventignore=all')
+    end
+  end,
+})
+
+-- Plugin list
+local Plug = vim.fn['plug#']
+vim.call('plug#begin')
+Plug 'airblade/vim-gitgutter'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'mfussenegger/nvim-dap'
+Plug 'igorlfs/nvim-dap-view'
+Plug 'mfussenegger/nvim-dap-python'
+vim.call('plug#end')
 
 -- Autocomplete when typing
 vim.api.nvim_create_autocmd("InsertCharPre", {
@@ -46,6 +76,8 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- lsp's
-vim.lsp.enable({"pylsp"})
-vim.lsp.enable({"rust_analyzer"})
-vim.lsp.enable({"lua_ls"})
+if not vim.g.huge_buffer then
+  vim.lsp.enable({"pylsp"})
+  vim.lsp.enable({"rust_analyzer"})
+  vim.lsp.enable({"lua_ls"})
+end

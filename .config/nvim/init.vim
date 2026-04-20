@@ -23,23 +23,5 @@ if !filereadable(vimplug_exists)
   autocmd VimEnter * PlugInstall
 endif
 
-" Plugin list
-call plug#begin(expand('~/.config/nvim/plugged'))
-Plug 'airblade/vim-gitgutter'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'mfussenegger/nvim-dap'
-Plug 'igorlfs/nvim-dap-view'
-Plug 'mfussenegger/nvim-dap-python'
-call plug#end()
-
-" Add column for gitgutter / diagnostic
-set signcolumn=auto:1
-
-" How often swap file is written / After how long diagnostic window will appear
-set updatetime=1200
-
-" Narrow autocomplete as you type
-set completeopt=longest,menuone
-
 " Launch init.lua USE AS LAST!
 lua require('init')
