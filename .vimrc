@@ -25,9 +25,6 @@ set expandtab
 " Ignore searching file extentions
 set wildignore=*.exe,*.dll,*.pdb,*.log,*.pak,*.zip,*.rar,*.7z,*/tmp/*,*.so,.*swp,*.pyc,*.sqlite
 
-"" Colors!
-colorscheme codedark
-
 " Disable explorer banner
 let g:netrw_banner=0
 
