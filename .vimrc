@@ -61,7 +61,6 @@ nnoremap <C-k> <Esc>:copen<CR>
 
 " Almost VSCode default Ctrl+j (open terminal)
 nnoremap <C-j> <Esc>:split<CR><C-w><C-w>:horizontal resize 8<CR>:terminal<CR><S-a>
-tnoremap <Esc> <C-d>
 
 " Tab accepts autocomplete
 inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
