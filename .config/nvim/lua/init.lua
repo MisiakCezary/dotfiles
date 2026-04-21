@@ -32,6 +32,7 @@ Plug('igorlfs/nvim-dap-view', { commit = '1dd4ba2307245ca9517a4b9d99f3bf80830e43
 Plug('mfussenegger/nvim-dap-python', { commit = '1808458eba2b18f178f990e01376941a42c7f93b'})
 vim.call('plug#end')
 
+
 vim.cmd('colorscheme codedark')
 
 -- Autocomplete when typing

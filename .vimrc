@@ -40,20 +40,27 @@ set listchars=tab:\ »\ ,trail:·,nbsp:␣
 set listchars+=precedes:<,extends:>
 
 " VSCode default Ctrl+f
-nnoremap <C-f> :grep -iIR '' **<C-Left><Left><Left>
+nnoremap <C-f> <Esc>:grep -iIR '' **<C-Left><Left><Left>
 vnoremap <C-f> "9y:grep -iIR '<C-r>9' **<C-Left><Left><Left>
 
 " VSCode default Ctrl+p
-nnoremap <C-p> :e **/
+nnoremap <C-p> <Esc>:e **/
 vnoremap <C-p> "9y:e **/<C-r>9
 
 " VSCode default Ctrl+h
-nnoremap <C-h> :%s//gic<Left><Left><Left><Left>
+nnoremap <C-h> <Esc>:%s//gic<Left><Left><Left><Left>
 vnoremap <C-h> "9y:%s/<C-r>9//gic<Left><Left><Left><Left>
 
-" Quickfix list navigation
-map <C-k> :cp<CR>
-map <C-j> :cn<CR>
+" Netrw
+nnoremap <C-n> <Esc>:Lex<CR>:vertical resize 30<CR>
+vnoremap <C-n> <Esc>:Lex<CR>:vertical resize 30<CR>
+
+" (K)uickfix list
+nnoremap <C-k> <Esc>:copen<CR>
+
+" Almost VSCode default Ctrl+j (open terminal)
+nnoremap <C-j> <Esc>:split<CR><C-w><C-w>:horizontal resize 8<CR>:terminal<CR><S-a>
+tnoremap <Esc> <C-d>
 
 " Tab accepts autocomplete
 inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
