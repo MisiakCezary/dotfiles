@@ -25,8 +25,9 @@ set expandtab
 " Ignore searching file extentions
 set wildignore=*.exe,*.dll,*.pdb,*.log,*.pak,*.zip,*.rar,*.7z,*/tmp/*,*.so,.*swp,*.pyc,*.sqlite
 
-" Disable explorer banner
+" Disable netrw banner and use tree view
 let g:netrw_banner=0
+let g:netrw_liststyle=3
 
 " Mouse interaction, can resize splits
 set mouse=a
