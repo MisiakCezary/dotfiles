@@ -30,8 +30,15 @@ Plug('nvim-treesitter/nvim-treesitter', { commit = '4916d6592ede8c07973490d9322f
 Plug('mfussenegger/nvim-dap', { commit = '45a69eba683a2c448dd9ecfc4de89511f0646b5f'})
 Plug('igorlfs/nvim-dap-view', { commit = '1dd4ba2307245ca9517a4b9d99f3bf80830e4397'})
 Plug('mfussenegger/nvim-dap-python', { commit = '1808458eba2b18f178f990e01376941a42c7f93b'})
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-telescope/telescope.nvim')
 vim.call('plug#end')
 
+-- Telescope remaps
+vim.api.nvim_set_keymap('n', '<C-p>', '<Esc>:lua require"telescope.builtin".find_files({ find_command = {"rg", "--files", "--hidden", "-g", "!.git" }})<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-p>', '"9y:lua require"telescope.builtin".find_files({ default_text = "<C-r>9", find_command = {"rg", "--files", "--hidden", "-g", "!.git" }})<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-f>', '<Esc>:lua require"telescope.builtin".live_grep()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-f>', '"9y:lua require"telescope.builtin".live_grep({ default_text = "<C-r>9" })<CR>', { noremap = true, silent = true })
 
 vim.cmd('colorscheme codedark')
 
@@ -53,14 +60,6 @@ vim.api.nvim_create_autocmd("InsertCharPre", {
       local key = vim.api.nvim_replace_termcodes("<C-n>", true, false, true)
       vim.api.nvim_feedkeys(key, "normal", false)
     end
-  end,
-})
-
--- Open diagnostic window when hovering
-vim.api.nvim_create_autocmd("CursorHold", {
-  pattern = "*",
-  callback = function()
-    vim.diagnostic.open_float()
   end,
 })
 
