@@ -30,8 +30,8 @@ Plug('nvim-treesitter/nvim-treesitter', { commit = '4916d6592ede8c07973490d9322f
 Plug('mfussenegger/nvim-dap', { commit = '45a69eba683a2c448dd9ecfc4de89511f0646b5f'})
 Plug('igorlfs/nvim-dap-view', { commit = '1dd4ba2307245ca9517a4b9d99f3bf80830e4397'})
 Plug('mfussenegger/nvim-dap-python', { commit = '1808458eba2b18f178f990e01376941a42c7f93b'})
-Plug('nvim-lua/plenary.nvim')
-Plug('nvim-telescope/telescope.nvim')
+Plug('nvim-lua/plenary.nvim', { commit = '74b06c6c75e4eeb3108ec01852001636d85a932b'})
+Plug('nvim-telescope/telescope.nvim', { commit = '506338434fec5ad19cb1f8d45bf92d66c4917393'})
 vim.call('plug#end')
 
 -- Telescope remaps
