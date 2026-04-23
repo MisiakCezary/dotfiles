@@ -20,21 +20,14 @@ stow -t ~ ~/dotfiles
 git config --global core.editor "nvim"
 ```
 
-## Installing tree-sitter-cli 26 or later (for example from cargo)
-```bash
-curl https://sh.rustup.rs -sSf | sh
+## In nvim install tree-sitter-cli 26 or later using mason
 ```
-```bash
-cargo install --locked tree-sitter-cli
+:Mason
 ```
 
-## In nvim install treesitter for specific language
+## Then install treesitter for specific language
 ```
 :TSInstall lua
 ```
 
-## Lsp setups
-To install new language support:
-1. Put chosen [LSP config](https://github.com/neovim/nvim-lspconfig/tree/master/lsp) into .config/nvim/lsp/
-2. Add config at the end of .config/nvim/lua/init.lua
-3. Install language server for that language
+In mason you can also install language servers and debug adapters.
