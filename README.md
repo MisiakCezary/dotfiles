@@ -1,7 +1,7 @@
 # dotfiles
 ## Requirements
 ```bash
-sudo apt install git stow tar curl build-essential
+sudo apt install git stow tar curl build-essential ripgrep
 ```
 
 ## Install
