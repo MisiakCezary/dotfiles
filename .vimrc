@@ -53,8 +53,8 @@ nnoremap <C-h> <Esc>:%s//gic<Left><Left><Left><Left>
 vnoremap <C-h> "9y:%s/<C-r>9//gic<Left><Left><Left><Left>
 
 " Netrw
-nnoremap <C-n> <Esc>:Lex<CR>:vertical resize 30<CR>
-vnoremap <C-n> <Esc>:Lex<CR>:vertical resize 30<CR>
+nnoremap <C-n> <Esc>:Lex!<CR>:vertical resize 30<CR>
+vnoremap <C-n> <Esc>:Lex!<CR>:vertical resize 30<CR>
 
 " (K)uickfix list
 nnoremap <C-k> <Esc>:copen<CR>
