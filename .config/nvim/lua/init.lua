@@ -37,9 +37,21 @@ Plug('nvim-lua/plenary.nvim', { commit = '74b06c6c75e4eeb3108ec01852001636d85a93
 Plug('nvim-telescope/telescope.nvim', { commit = '506338434fec5ad19cb1f8d45bf92d66c4917393'})
 vim.call('plug#end')
 
--- Start mason ()
+-- Start mason
 require("mason").setup()
 require("mason-nvim-dap").setup()
+require("mason-lspconfig").setup()
+require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+
+-- Debug keymaps
+vim.api.nvim_set_keymap('n', '<M-c>', '<Esc>:DapContinue<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<M-d>', '<Esc>:DapDisconnect<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<M-q>', '<Esc>:DapStepOut<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<M-o>', '<Esc>:DapStepOver<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<M-i>', '<Esc>:DapStepInto<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<M-b>', '<Esc>:DapToggleBreakpoint<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<M-v>', '<Esc>:DapViewToggle<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<M-w>', '<Esc>:DapViewWatch<CR>', { noremap = true, silent = true})
 
 -- Telescope remaps
 vim.api.nvim_set_keymap('n', '<C-p>', '<Esc>:lua require"telescope.builtin".find_files({ find_command = {"rg", "--files", "--hidden", "-g", "!.git" }})<CR>', { noremap = true, silent = true })
