@@ -52,16 +52,6 @@ vnoremap <C-p> "9y:e **/<C-r>9
 nnoremap <C-h> <Esc>:%s//gic<Left><Left><Left><Left>
 vnoremap <C-h> "9y:%s/<C-r>9//gic<Left><Left><Left><Left>
 
-" Netrw
-nnoremap <C-n> <Esc>:Lex!<CR>:vertical resize 30<CR>
-vnoremap <C-n> <Esc>:Lex!<CR>:vertical resize 30<CR>
-
-" (K)uickfix list
-nnoremap <C-k> <Esc>:copen<CR>
-
-" Almost VSCode default Ctrl+j (open terminal)
-nnoremap <C-j> <Esc>:split<CR><C-w><C-w>:horizontal resize 8<CR>:terminal<CR><S-a>
-
 " Tab accepts autocomplete
 inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-y>" : "\<S-Tab>"
