@@ -37,7 +37,7 @@ set clipboard+=unnamedplus
 
 " Display whitespaces
 set list
-set listchars=tab:\ »\ ,trail:·,nbsp:␣
+set listchars=tab:\|\-,trail:·,nbsp:␣
 set listchars+=precedes:<,extends:>
 
 " VSCode default Ctrl+f
