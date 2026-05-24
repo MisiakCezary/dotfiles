@@ -22,12 +22,15 @@ set shiftwidth=4 smarttab
 set expandtab
 "set tabstop=4 softtabstop=0
 
+" Better find completion
+set path+=,**
+
 " Ignore searching file extentions
 set wildignore=*.exe,*.dll,*.pdb,*.log,*.pak,*.zip,*.rar,*.7z,*/tmp/*,*.so,.*swp,*.pyc,*.sqlite
 
-" Disable netrw banner and use tree view
+" Disable netrw banner
 let g:netrw_banner=0
-let g:netrw_liststyle=3
+"let g:netrw_liststyle=3
 
 " Mouse interaction, can resize splits
 set mouse=a
@@ -45,8 +48,8 @@ nnoremap <C-f> <Esc>:grep -iIR '' **<C-Left><Left><Left>
 vnoremap <C-f> "9y:grep -iIR '<C-r>9' **<C-Left><Left><Left>
 
 " VSCode default Ctrl+p
-nnoremap <C-p> <Esc>:e **/
-vnoremap <C-p> "9y:e **/<C-r>9
+nnoremap <C-p> <Esc>:find **/
+vnoremap <C-p> "9y:find **/<C-r>9
 
 " VSCode default Ctrl+h
 nnoremap <C-h> <Esc>:%s//gic<Left><Left><Left><Left>
