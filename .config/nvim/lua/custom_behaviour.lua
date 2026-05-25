@@ -27,6 +27,13 @@ vim.keymap.set("c", "<CR>", function()
   return "<CR>"
 end, { expr = true })
 
+-- Briefly highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 150 })
+  end,
+})
+
 -- cd into git root dir on vim launch
 vim.cmd('silent cd `git rev-parse --show-toplevel`')
 
