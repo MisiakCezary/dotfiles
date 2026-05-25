@@ -20,4 +20,5 @@ vim.opt.clipboard:append('unnamedplus')
 vim.opt.list = true
 vim.opt.listchars:append('precedes:<,extends:>')
 vim.opt.listchars = { tab='|-', trail='·', nbsp='␣', }
+vim.opt.cursorline = true
 
