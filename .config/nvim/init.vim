@@ -1,7 +1,10 @@
-"Import .vimrc
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
-source ~/.vimrc
+"Import .vimrc if exists
+let vimrc_exists=expand('~/.vimrc')
+if filereadable(vimrc_exists)
+  set runtimepath^=~/.vim runtimepath+=~/.vim/after
+  let &packpath=&runtimepath
+  source ~/.vimrc
+end
 
 " Install plugin manager
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
