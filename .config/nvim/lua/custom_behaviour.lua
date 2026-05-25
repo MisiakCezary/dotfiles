@@ -19,6 +19,14 @@ vim.api.nvim_create_autocmd("InsertCharPre", {
   end,
 })
 
+-- Enter accepts autocomplete in command mode
+vim.keymap.set("c", "<CR>", function()
+  if vim.fn.pumvisible() == 1 then
+    return "<C-y>"
+  end
+  return "<CR>"
+end, { expr = true })
+
 -- cd into git root dir on vim launch
 vim.cmd('silent cd `git rev-parse --show-toplevel`')
 
