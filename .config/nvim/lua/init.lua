@@ -60,6 +60,7 @@ vim.api.nvim_set_keymap('n', '<C-f>', '<Esc>:lua require"telescope.builtin".live
 vim.api.nvim_set_keymap('v', '<C-f>', '"9y:lua require"telescope.builtin".live_grep({ default_text = "<C-r>9" })<CR>', { noremap = true, silent = true })
 
 -- Launch theme
+vim.cmd('let g:codedark_transparent = 1')
 vim.cmd('colorscheme codedark')
 
 -- Autocomplete when typing
