@@ -66,3 +66,7 @@ vim.api.nvim_create_autocmd('FileType', {
 -- Launch theme
 vim.cmd('let g:codedark_transparent = 1')
 vim.cmd('colorscheme codedark')
+-- Theme custom changes
+vim.cmd('hi LineNr guifg=#ffffff')
+vim.cmd('hi LineNrAbove guifg=#555555')
+vim.cmd('hi LineNrBelow guifg=#555555')
