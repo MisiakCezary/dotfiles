@@ -12,6 +12,7 @@ Plug('igorlfs/nvim-dap-view', { commit = '1dd4ba2307245ca9517a4b9d99f3bf80830e43
 Plug('mfussenegger/nvim-dap-python', { commit = '1808458eba2b18f178f990e01376941a42c7f93b'})
 Plug('nvim-lua/plenary.nvim', { commit = '74b06c6c75e4eeb3108ec01852001636d85a932b'})
 Plug('nvim-telescope/telescope.nvim', { commit = '506338434fec5ad19cb1f8d45bf92d66c4917393'})
+Plug('tpope/vim-fugitive', { commit = '3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0'})
 vim.call('plug#end')
 
 -- Start mason
