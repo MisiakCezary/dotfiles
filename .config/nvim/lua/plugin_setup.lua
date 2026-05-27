@@ -3,8 +3,8 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 -- Theme and colors
-Plug('tomasiser/vim-code-dark', { commit = '4624dc223bf574aa9a731c2383c579847303c380'})
 Plug('nvim-treesitter/nvim-treesitter', { commit = '4916d6592ede8c07973490d9322f187e07dfefac'})
+Plug('Mofiqul/vscode.nvim', { commit = 'aa1102a7e15195c9cca22730b09224a7f7745ba8'})
 
 Plug('mason-org/mason.nvim', { commit = '12ddd182d9efbdc848b540f16484a583d52da0fb'})
 Plug('mason-org/mason-lspconfig.nvim', { commit = '0c2823e0418f3d9230ff8b201c976e84de1cb401'})
@@ -63,10 +63,3 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- Launch theme
-vim.cmd('let g:codedark_transparent = 1')
-vim.cmd('colorscheme codedark')
--- Theme custom changes
-vim.cmd('hi LineNr guifg=#ffffff')
-vim.cmd('hi LineNrAbove guifg=#555555')
-vim.cmd('hi LineNrBelow guifg=#555555')
