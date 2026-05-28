@@ -30,12 +30,6 @@ Plug('kristijanhusak/vim-dadbod-ui', { commit = '07e92e22114cc5b1ba4938d99897d85
 
 vim.call('plug#end')
 
--- Start mason
-require("mason").setup()
-require("mason-nvim-dap").setup()
-require("mason-lspconfig").setup()
-require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
-
 -- Disable diagnostic signs
 vim.diagnostic.config({ signs = false, })
 
