@@ -5,7 +5,6 @@ require("mason-lspconfig").setup()
 
 local dap = require('dap')
 
--- Python ---------------------------------------------------------------------
 local pythonPath = function()
   local cwd = vim.loop.cwd()
   if vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
@@ -28,12 +27,10 @@ local set_python_dap = function()
         'runserver',
         '127.0.0.1:8080',
         '--noreload'
-        --'--print-sql'
       },
       justMyCode = true,
-      django = true,
-      console= "integratedTerminal",
-    },
+      django = true
+    }
   }
 
     dap.adapters.python = {
@@ -45,8 +42,6 @@ end
 
 set_python_dap()
 vim.api.nvim_create_autocmd({'DirChanged'}, {
-    callback = function() set_python_dap() end,
+    callback = function() set_python_dap() end
 })
-
--------------------------------------------------------------------------------
 
