@@ -37,6 +37,7 @@ vim.diagnostic.config({ signs = false, })
 require('telescope').setup({
   defaults = {
     layout_strategy = 'horizontal',
+    borderchars = { '', '', '', '', '', '', '', '' },
     layout_config = {
       horizontal = {
         width = { padding = 0 },
