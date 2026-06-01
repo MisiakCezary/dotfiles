@@ -30,6 +30,10 @@ Plug('kristijanhusak/vim-dadbod-ui', { commit = '07e92e22114cc5b1ba4938d99897d85
 
 vim.call('plug#end')
 
+-- Start mason
+require("mason").setup()
+require("mason-lspconfig").setup()
+
 -- Disable diagnostic signs
 vim.diagnostic.config({ signs = false, })
 

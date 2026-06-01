@@ -12,7 +12,7 @@ cd ~; git clone https://github.com/MisiakCezary/dotfiles
 
 Apply configuration from cloned repository using symlinks:
 ```bash
-stow -t ~ ~/dotfiles
+cd ~/dotfiles/; stow -t ~ .
 ```
 
 ## Seting nvim as git editor (or vim)
