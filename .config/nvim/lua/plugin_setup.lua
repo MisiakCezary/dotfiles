@@ -39,26 +39,26 @@ vim.diagnostic.config({ signs = false, })
 
 -- Telescope setup
 require('telescope').setup({
-  defaults = {
-    layout_strategy = 'horizontal',
-    borderchars = { '', '', '', '', '', '', '', '' },
-    layout_config = {
-      horizontal = {
-        width = { padding = 0 },
-        height = { padding = 0 },
-        preview_width = 0.6,
-      },
+    defaults = {
+        layout_strategy = 'horizontal',
+        borderchars = { '', '', '', '', '', '', '', '' },
+        layout_config = {
+            horizontal = {
+                width = { padding = 0 },
+                height = { padding = 0 },
+                preview_width = 0.6,
+            },
+        },
     },
-  },
 })
 
 -- Auto activate treesitter
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '*' },
-  callback = function()
-    pcall (function()
-      vim.treesitter.start()
-    end)
-  end,
+    pattern = { '*' },
+    callback = function()
+        pcall (function()
+            vim.treesitter.start()
+        end)
+    end,
 })
 
