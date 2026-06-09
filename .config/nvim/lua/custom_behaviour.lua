@@ -45,6 +45,14 @@ vim.keymap.set("c", "<CR>", function()
     return "<CR>"
 end, { expr = true })
 
+-- Enter accepts autocomplete in insert mode
+vim.keymap.set("i", "<tab>", function()
+    if vim.fn.pumvisible() == 1 then
+        return "<C-y>"
+    end
+    return "<tab>"
+end, { expr = true })
+
 -- Briefly highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
