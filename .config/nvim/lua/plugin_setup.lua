@@ -21,7 +21,6 @@ Plug('nvim-telescope/telescope.nvim', { commit = '506338434fec5ad19cb1f8d45bf92d
 
 -- Git integration
 Plug('airblade/vim-gitgutter', { commit = '21c977e8597c468c7dc76001389b0b430d46a4b0'})
-Plug('tpope/vim-fugitive', { commit = '3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0'})
 
 -- Sql integration
 Plug('tpope/vim-dadbod', { commit = '6d1d41da4873a445c5605f2005ad2c68c99d8770'})
