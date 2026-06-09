@@ -1,12 +1,11 @@
 -- Debug keymaps
-vim.api.nvim_set_keymap('n', '<M-c>', '<Esc>:DapContinue<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-d>', '<Esc>:DapDisconnect<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-q>', '<Esc>:DapStepOut<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-o>', '<Esc>:DapStepOver<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-i>', '<Esc>:DapStepInto<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-b>', '<Esc>:DapToggleBreakpoint<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-v>', '<Esc>:DapViewToggle<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<M-w>', '<Esc>:DapViewWatch<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<F5>', '<Esc>:DapContinue<CR>:DapViewOpen<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<F6>', '<Esc>:DapDisconnect<CR>:DapViewClose<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<F7>', '<Esc>:DapViewToggle<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<F9>', '<Esc>:DapToggleBreakpoint<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-Left>', '<Esc>:DapStepOut<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-Down>', '<Esc>:DapStepOver<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-Right>', '<Esc>:DapStepInto<CR>', { noremap = true, silent = true})
 
 -- Telescope remaps
 vim.keymap.set('n', '<C-f>', "<cmd>exec 'Telescope live_grep'<CR>")
