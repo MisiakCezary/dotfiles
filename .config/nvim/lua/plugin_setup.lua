@@ -19,6 +19,10 @@ Plug('mfussenegger/nvim-dap-python', { commit = '1808458eba2b18f178f990e01376941
 Plug('nvim-lua/plenary.nvim', { commit = '74b06c6c75e4eeb3108ec01852001636d85a932b'})
 Plug('nvim-telescope/telescope.nvim', { commit = '506338434fec5ad19cb1f8d45bf92d66c4917393'})
 
+-- Autocompletion
+Plug('saghen/blink.lib', { commit = 'b127d48bf8e9ac9cf41f6e0fbead317503f76558' })
+Plug('saghen/blink.cmp', { tag = 'v1.10.2' })
+
 -- Git integration
 Plug('airblade/vim-gitgutter', { commit = '21c977e8597c468c7dc76001389b0b430d46a4b0'})
 
@@ -51,6 +55,14 @@ require('telescope').setup({
     },
 })
 
+-- Autocompletion setup
+require('blink.cmp').setup({
+    keymap = {
+        preset = 'default',
+        ['<CR>'] = { 'accept', 'fallback' },
+        ['<Tab>'] = { 'accept', 'fallback' },
+    },
+})
 
 local setup_treesitter = function()
     local treesitter = require("nvim-treesitter")
