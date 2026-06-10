@@ -43,6 +43,8 @@ vim.diagnostic.config({ signs = false, })
 -- Telescope setup
 require('telescope').setup({
     defaults = {
+        prompt_position = 'top',
+        sorting_strategy = 'ascending',
         layout_strategy = 'horizontal',
         borderchars = { '', '', '', '', '', '', '', '' },
         layout_config = {
