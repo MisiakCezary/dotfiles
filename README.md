@@ -25,11 +25,6 @@ git config --global core.editor "nvim"
 :Mason
 ```
 
-## Then install treesitter for specific language
-```
-:TSInstall lua
-```
-
 ## Add .config/nvim/lua/dap_configs.lua and customize debugging settings
 ```bash
 cp ~/dotfiles/.config/nvim/lua/dap_configs.lua.dist ~/dotfiles/.config/nvim/lua/dap_configs.lua
