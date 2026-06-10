@@ -74,19 +74,8 @@ local setup_treesitter = function()
         "vimdoc",
         "json",
         "lua",
-        "markdown",
         "python",
         "bash",
-        -- "rust",
-        -- "c",
-        -- "cpp",
-        -- "go",
-        -- "html",
-        -- "css",
-        -- "javascript",
-        -- "typescript",
-        -- "vue",
-        -- "svelte",
     }
 
     local config = require("nvim-treesitter.config")
