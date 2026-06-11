@@ -6,6 +6,7 @@ vim.call('plug#begin')
 Plug('nvim-treesitter/nvim-treesitter', { commit = '4916d6592ede8c07973490d9322f187e07dfefac'})
 Plug('Mofiqul/vscode.nvim', { commit = 'aa1102a7e15195c9cca22730b09224a7f7745ba8'})
 
+-- Mason
 Plug('mason-org/mason.nvim', { commit = '12ddd182d9efbdc848b540f16484a583d52da0fb'})
 Plug('mason-org/mason-lspconfig.nvim', { commit = '0c2823e0418f3d9230ff8b201c976e84de1cb401'})
 
@@ -43,11 +44,11 @@ vim.diagnostic.config({ signs = false, })
 -- Telescope setup
 require('telescope').setup({
     defaults = {
-        prompt_position = 'top',
         sorting_strategy = 'ascending',
         layout_strategy = 'horizontal',
         borderchars = { '', '', '', '', '', '', '', '' },
         layout_config = {
+            prompt_position = 'top',
             horizontal = {
                 width = { padding = 0 },
                 height = { padding = 0 },
@@ -66,6 +67,7 @@ require('blink.cmp').setup({
     },
 })
 
+-- Tree-sitter setup
 local setup_treesitter = function()
     local treesitter = require("nvim-treesitter")
     treesitter.setup({})
