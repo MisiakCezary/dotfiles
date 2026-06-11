@@ -18,6 +18,6 @@ vim.g.netrw_banner = 0
 vim.opt.mouse = 'a'
 vim.opt.clipboard:append('unnamedplus')
 vim.opt.list = true
-vim.opt.listchars = { tab='|-', trail='·', nbsp='␣', precedes='<', extends='>', leadmultispace='|   ' }
+vim.opt.listchars = { tab='│-', trail='·', nbsp='␣', precedes='<', extends='>', leadmultispace='│   ' }
 vim.opt.cursorline = true
 
