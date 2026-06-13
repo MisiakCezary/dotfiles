@@ -36,6 +36,7 @@ vim.call('plug#end')
 
 -- Start mason
 require("mason").setup()
+require("mason-nvim-dap").setup()
 require("mason-lspconfig").setup()
 
 -- Disable diagnostic signs
