@@ -1,3 +1,6 @@
+-- Dadbod keymaps
+vim.api.nvim_set_keymap('n', '<F2>', '<Esc>:tabnew<CR>:DBUI<CR>', { noremap = true, silent = true})
+
 -- Debug keymaps
 vim.api.nvim_set_keymap('n', '<F3>', '<Esc>:DapViewToggle<CR>', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<F4>', '<Esc>:DapDisconnect<CR>:DapViewClose<CR>', { noremap = true, silent = true})
