@@ -40,7 +40,14 @@ require("mason-nvim-dap").setup()
 require("mason-lspconfig").setup()
 
 -- Disable diagnostic signs
-vim.diagnostic.config({ signs = false, })
+vim.diagnostic.config({
+    signs = false,
+    float = {
+        border = 'double',
+        header = false,
+        focusable = true,
+    }
+})
 
 -- Telescope setup
 require('telescope').setup({
