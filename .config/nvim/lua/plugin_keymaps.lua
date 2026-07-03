@@ -11,8 +11,8 @@ vim.api.nvim_set_keymap('n', '<F8>', '<Esc>:DapStepInto<CR>', { noremap = true, 
 vim.api.nvim_set_keymap('n', '<F9>', '<Esc>:DapToggleBreakpoint<CR>', { noremap = true, silent = true})
 
 -- Telescope remaps
-vim.keymap.set('n', '<C-f>', "<cmd>exec 'Telescope live_grep'<CR>")
-vim.keymap.set('v', '<C-f>', "\"9y<cmd>exec 'Telescope live_grep default_text=' . escape(@9, ' ')<CR>")
-vim.keymap.set('n', '<C-p>', "<cmd>exec 'Telescope find_files'<CR>")
-vim.keymap.set('v', '<C-p>', "\"9y<cmd>exec 'Telescope find_files default_text=' . escape(@9, ' ')<CR>")
-vim.keymap.set('n', '<C-Space>', "<cmd>exec 'Telescope'<CR>")
+vim.api.nvim_set_keymap('n', '<C-f>', "<cmd>exec 'Telescope live_grep'<CR>", { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<C-f>', "\"9y<cmd>exec 'Telescope live_grep default_text=' . escape(@9, ' ')<CR>", { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Tab>', "<cmd>exec 'Telescope find_files'<CR>", { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gs', "<cmd>exec 'Telescope git_status'<CR>", { noremap = true, silent = true})
+
