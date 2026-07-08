@@ -1,5 +1,4 @@
 vim.g.mapleader = ' '
-
 vim.opt.completeopt = {'menu', 'menuone', 'noinsert'}
 vim.opt.shortmess:append('c')
 vim.opt.signcolumn = 'auto:1'
@@ -8,8 +7,6 @@ vim.opt.ignorecase = true
 vim.opt.hlsearch = true
 vim.opt.scrolloff = 4
 vim.opt.incsearch = true
--- vim.opt.number = true
--- vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
