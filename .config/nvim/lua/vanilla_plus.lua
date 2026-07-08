@@ -23,6 +23,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- Open xaml files as xml
+vim.filetype.add({
+    extension = {
+        xaml = "xml",
+    },
+})
+
 -- Disable diagnostic signs
 vim.diagnostic.config({
     signs = false,
