@@ -49,7 +49,7 @@ vim.api.nvim_set_keymap('n', '+', '<esc>4<C-W>><C-W>+', { noremap = true, silent
 vim.api.nvim_set_keymap('n', '-', '<esc>4<C-W><<C-W>-', { noremap = true, silent = true})
 
 -- [G]it [B]lame
-vim.api.nvim_set_keymap('n', 'gb', ":let @9 = line('.')<CR>:enew<CR>:0r!git blame #<CR>:<C-r>9<CR>zz:setlocal readonly<CR>:setlocal nomodified<CR>:bd", { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gb', ":let @9 = line('.')<CR>:enew<CR>:0r!git blame #<CR>:<C-r>9<CR>zz:setlocal readonly<CR>:setlocal nomodified<CR>", { noremap = true, silent = true})
 
 -- cd into git root dir on vim launch
 vim.cmd('silent cd `git rev-parse --show-toplevel`')
