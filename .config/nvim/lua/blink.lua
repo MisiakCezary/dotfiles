@@ -19,5 +19,10 @@ require('blink.cmp').setup({
         ['<CR>'] = { 'accept', 'fallback' },
         ['<Tab>'] = { 'accept', 'fallback' },
     },
+    signature = {
+        enabled = true,
+        window = {
+            border = 'single',
+        }
+    }
 })
-
