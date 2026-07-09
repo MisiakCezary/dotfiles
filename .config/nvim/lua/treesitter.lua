@@ -36,4 +36,6 @@ local setup_treesitter = function()
     })
 end
 
-setup_treesitter()
+if vim.fn.has('win32') == 0 then
+    setup_treesitter()
+end
