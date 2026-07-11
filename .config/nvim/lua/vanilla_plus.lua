@@ -52,7 +52,7 @@ vim.api.nvim_set_keymap('n', '<>', '<esc>8<C-W><2<C-W>-:set cmdheight=1<CR>', { 
 vim.api.nvim_set_keymap('n', 'gb', ":let @9 = line('.')<CR>:enew<CR>:0r!git blame #<CR>:<C-r>9<CR>zz:setlocal readonly<CR>:setlocal nomodified<CR>", { noremap = true, silent = true})
 
 -- Netrw explorer
-vim.api.nvim_set_keymap('n', '-', '<esc>:Ex<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '-', '<esc>:Ex <bar> :sil! /<C-R>=expand("%:t")<CR><CR>', { noremap = true, silent = true})
 
 -- Netrw space enters file/dir
 local netrw_maps = vim.api.nvim_create_augroup('NetrwMapping', { clear = true })
