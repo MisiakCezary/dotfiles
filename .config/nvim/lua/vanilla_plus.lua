@@ -44,12 +44,26 @@ vim.diagnostic.config({
 vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true})
 
--- Resize window using +/-
-vim.api.nvim_set_keymap('n', '+', '<esc>4<C-W>><C-W>+', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '-', '<esc>4<C-W><<C-W>-', { noremap = true, silent = true})
+-- Resize splits
+vim.api.nvim_set_keymap('n', '><', '<esc>8<C-W>>2<C-W>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<>', '<esc>8<C-W><2<C-W>-:set cmdheight=1<CR>', { noremap = true, silent = true})
 
 -- [G]it [B]lame
 vim.api.nvim_set_keymap('n', 'gb', ":let @9 = line('.')<CR>:enew<CR>:0r!git blame #<CR>:<C-r>9<CR>zz:setlocal readonly<CR>:setlocal nomodified<CR>", { noremap = true, silent = true})
+
+-- Netrw explorer
+vim.api.nvim_set_keymap('n', '-', '<esc>:Ex<CR>', { noremap = true, silent = true})
+
+-- Netrw space enters file/dir
+local netrw_maps = vim.api.nvim_create_augroup('NetrwMapping', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'netrw',
+  group = netrw_maps,
+  callback = function()
+    vim.keymap.set('n', ' ', '<Plug>NetrwLocalBrowseCheck', { noremap = true, silent = true})
+    vim.keymap.set('n', '<CR>', '<Plug>NetrwLocalBrowseCheck', { noremap = true, silent = true})
+  end,
+})
 
 -- cd into git root dir on vim launch
 vim.cmd('silent cd `git rev-parse --show-toplevel`')
